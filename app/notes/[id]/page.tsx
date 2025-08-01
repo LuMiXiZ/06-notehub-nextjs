@@ -6,11 +6,11 @@ import {
 import { fetchNoteById } from "@/lib/api";
 import NoteDetailsClient from "@/app/notes/[id]/NoteDetails.client";
 
-type Props = {
+export default async function NoteDetailsPage({
+  params,
+}: {
   params: { id: string };
-};
-
-export default async function NoteDetailsPage({ params }: Props) {
+}) {
   const noteId = params.id;
 
   const queryClient = new QueryClient();
