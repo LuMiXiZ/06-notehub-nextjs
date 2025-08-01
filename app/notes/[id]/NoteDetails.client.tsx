@@ -4,11 +4,11 @@ import css from "./NoteDetails.client.module.css";
 import { useQuery } from "@tanstack/react-query";
 import { fetchNoteById } from "@/lib/api";
 
-type Props = {
+type NoteParams = {
   id: string;
 };
 
-export default function NoteDetailsClient({ id }: Props) {
+export default function NoteDetailsClient({ id }: NoteParams) {
   const {
     data: note,
     isLoading,
