@@ -8,7 +8,7 @@ import { useDebouncedCallback } from "use-debounce";
 import SearchBox from "@/components/SearchBox/SearchBox";
 import Pagination from "@/components/Pagination/Pagination";
 import NoteList from "@/components/NoteList/NoteList";
-import NoteModal from "@/components/NoteModal/NoteModal";
+import Modal from "@/components/Modal/Modal";
 import NoteForm from "@/components/NoteForm/NoteForm";
 import type { NoteSearchResponse } from "../../lib/api";
 import Loading from "../loading";
@@ -69,9 +69,9 @@ export default function NotesClient({ initialData }: NotesClientProps) {
         <p>No notes found</p>
       )}
       {isModalOpen && (
-        <NoteModal onClose={() => setModalIsOpen(false)}>
+        <Modal onClose={() => setModalIsOpen(false)}>
           <NoteForm onClose={() => setModalIsOpen(false)} />
-        </NoteModal>
+        </Modal>
       )}
     </div>
   );
